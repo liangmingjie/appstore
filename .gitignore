@@ -1,3 +1,17 @@
 /vendor
 /node_modules
 .env
+
+.idea/.name
+
+.idea/appstore.iml
+
+.idea/encodings.xml
+
+.idea/modules.xml
+
+.idea/scopes/scope_settings.xml
+
+.idea/vcs.xml
+
+.idea/workspace.xml
