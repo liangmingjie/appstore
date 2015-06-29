@@ -36,7 +36,7 @@
 				<ul class="nav navbar-nav navbar-left logo-2">
                     <li><a href="{{ url('/') }}">在线商店</a></li>
                     <li><a href="{{ url('/') }}">服务</a></li>
-                    <li><a href="{{ url('/developer') }}">应用中心</a></li>
+                    <li><a href="{{ url('/appcenter') }}">应用中心</a></li>
 
                 </ul>
 

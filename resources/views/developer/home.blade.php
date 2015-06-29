@@ -1,4 +1,4 @@
-@extends('developer_app')
+@extends('app_dev')
 
 @section('content')
 <p  style="text-align: center;font-size: 100px;padding-top: 180px;font-family: SimSun, sans-serif">开发者</p>

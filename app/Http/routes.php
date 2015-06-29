@@ -26,3 +26,9 @@ Route::group(['prefix' => 'developer','namespace' => 'Developer'],function()
     Route::get('/','DeveloperController@index');
 });
 
+#应用中心
+Route::group(['prefix' => 'appcenter','namespace' => 'AppCenter'],function()
+{
+    Route::get('/','AppManageController@index');
+});
+
