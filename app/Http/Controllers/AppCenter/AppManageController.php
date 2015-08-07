@@ -24,7 +24,7 @@ class AppManageController extends Controller
         }
 
         $developer = Developer::find(['user_id'=>Auth::user()->id]);
-        if(empty($developer))
+        if(empty($developer->item))
         {
             //不是开发者 注册开发者
             return view('developer.register');
