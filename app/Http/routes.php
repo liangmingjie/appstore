@@ -11,6 +11,9 @@
 |
 */
 
+Event::listen('404', function() {
+    abort(404);
+});
 
 Route::get('/', 'HomeController@index');
 Route::get('home', 'HomeController@index');
