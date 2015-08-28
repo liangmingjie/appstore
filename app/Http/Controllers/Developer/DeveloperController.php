@@ -1,9 +1,10 @@
 <?php namespace App\Http\Controllers\Developer;
 
+use App\Developer;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use Illuminate\Http\Request;
+use Request;
 
 class DeveloperController extends Controller {
 
@@ -36,6 +37,11 @@ class DeveloperController extends Controller {
 	public function store()
 	{
 		//
+        $input = Request::all();
+
+        $result = Developer::create($input);
+
+        return $result;
 	}
 
 	/**

@@ -27,6 +27,7 @@ Route::controllers([
 Route::group(['prefix' => 'developer','namespace' => 'Developer'],function()
 {
     Route::get('/','DeveloperController@index');
+    Route::post('','DeveloperController@store');
 });
 
 #应用中心
