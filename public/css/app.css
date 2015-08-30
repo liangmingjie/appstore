@@ -1220,7 +1220,7 @@ ol ol {
   padding-left: 5px;
   padding-right: 5px;
 }
-dl {
+font {
   margin-top: 0;
   margin-bottom: 20px;
 }
@@ -1384,7 +1384,6 @@ pre code {
   }
 }
 .container-fluid {
-  width: 1000px;
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
