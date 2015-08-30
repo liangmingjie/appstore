@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\AppCenter;
+namespace App\Http\Controllers\Application;
 
 use Auth;
-use App\Developer;
+use Request;
+use App\Application;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Application;
 
-class AppManageController extends Controller
+class ApplicationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,25 +17,7 @@ class AppManageController extends Controller
      */
     public function index()
     {
-        //应用管理中心
-        if(!Auth::check())
-        {
-            //未登录 要登录
-            return view('auth.login');
-        }
-
-        $developer = Developer::find(['user_id'=>Auth::user()->id])->toarray();
-
-        if(empty($developer))
-        {
-            //不是开发者 注册开发者
-            return view('developer.register');
-        }
-
-        //获取应用信息
-        $application = Application::find(['user_id'=>Auth::user()->id]);
-
-        return view('appcenter.manage',compact('application'));
+        //
     }
 
     /**
@@ -46,6 +28,7 @@ class AppManageController extends Controller
     public function create()
     {
         //
+        return view('application.register');
     }
 
     /**
@@ -56,6 +39,12 @@ class AppManageController extends Controller
     public function store()
     {
         //
+        $input = Request::all();
+
+        $input['user_id'] = Auth::user()->id;
+        $result = Application::create($input);
+
+        return $result;
     }
 
     /**

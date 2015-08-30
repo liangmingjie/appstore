@@ -36,3 +36,10 @@ Route::group(['prefix' => 'appcenter','namespace' => 'AppCenter'],function()
     Route::get('/','AppManageController@index');
 });
 
+#应用中心
+Route::group(['prefix' => 'application','namespace' => 'Application'],function()
+{
+    Route::get('/create','ApplicationController@create');
+    Route::post('', 'ApplicationController@store');
+});
+

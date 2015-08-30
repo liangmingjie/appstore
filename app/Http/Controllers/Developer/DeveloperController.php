@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers\Developer;
 
+use Auth;
 use App\Developer;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -39,6 +40,7 @@ class DeveloperController extends Controller {
 		//
         $input = Request::all();
 
+        $input['user_id'] = Auth::user()->id;
         $result = Developer::create($input);
 
         return $result;
