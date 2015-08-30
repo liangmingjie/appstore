@@ -43,7 +43,7 @@ class DeveloperController extends Controller {
         $input['user_id'] = Auth::user()->id;
         $result = Developer::create($input);
 
-        return $result;
+        return view('appcenter.manage');
 	}
 
 	/**

@@ -24,7 +24,7 @@ class Developer extends Migration
             $table->string('id_card_image');   //身份证扫描件
             $table->integer('qq');   //qq
             $table->integer('user_id');  //用户id
-            $table->integer('audit',1);    //审核状态
+            $table->integer('audit');    //审核状态
             $table->timestamps();
         });
     }

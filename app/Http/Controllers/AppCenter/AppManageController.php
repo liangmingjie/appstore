@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\AppCenter;
 
+use App\AppInfo;
 use Auth;
 use App\Developer;
 use App\Http\Requests;
@@ -33,8 +34,13 @@ class AppManageController extends Controller
         }
 
         //获取应用信息
-        $application = Application::find(['user_id'=>Auth::user()->id]);
-
+        $dingdone_app_id = Auth::user()->dingdone_app_id;
+        $application = array();
+        if($dingdone_app_id)
+        {
+            $application = AppInfo::getAppInfo($dingdone_app_id);
+        }
+        
         return view('appcenter.manage',compact('application'));
     }
 

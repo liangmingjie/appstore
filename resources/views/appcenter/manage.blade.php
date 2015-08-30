@@ -12,22 +12,26 @@
     </div><br>
 
     @if($application)
+        <?php
+        foreach($application as $k=>$v)
+            {
+                $$k = $v;
+            }
+        ?>
     <div class="form-horizontal">
-        @foreach($application as $app)
-                <div class="form-group">
-                    {!! Form::label('user_name','用户名:', ['class' => 'col-md-1 control-label','value' => '$app->name']) !!}
-                    <div class="col-md-6">
-                        {!! Form::text('user_name', "$app->name", ['class' => 'form-control']) !!}
-                    </div>
+            <div class="form-group">
+                {!! Form::label('user_name','用户名:', ['class' => 'col-md-1 control-label','value' => '']) !!}
+                <div class="col-md-6">
+                    {!! Form::text('user_name', "$user_name", ['class' => 'form-control']) !!}
                 </div>
+            </div>
 
-                <div class="form-group">
-                    {!! Form::label('user_name','用户名:', ['class' => 'col-md-1 control-label','value' => '$app->name']) !!}
-                    <div class="col-md-6">
-                        {!! Form::text('user_name', "$app->name", ['class' => 'form-control']) !!}
-                    </div>
+            <div class="form-group">
+                {!! Form::label('user_name','应用名称:', ['class' => 'col-md-1 control-label','value' => '']) !!}
+                <div class="col-md-6">
+                    {!! Form::text('user_name', "$name", ['class' => 'form-control']) !!}
                 </div>
-        @endforeach
+            </div>
     </div>
     @else
 
